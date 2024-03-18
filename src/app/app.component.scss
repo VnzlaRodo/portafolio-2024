@@ -1,0 +1,45 @@
+/*Colores*/
+$primary: #052594;
+$secundary: indigo;
+$background_element: rgb(248, 249, 250, .9);
+
+/*Fuentes*/
+@font-face {
+  font-family: "poppins";
+  src: url('../assets/fonts/poppins/poppins-regular.ttf');
+}
+
+@font-face {
+  font-family: "cyber";
+  src: url('../assets/fonts/cyber/CyberPrincess3D.ttf');
+}
+
+h1,h2,h3,h4,h5,p,div{
+  color: white;
+}
+
+h1{
+  font-family: "cyber";
+}
+
+p{
+  font-family: "poppins";
+}
+
+section.container{    
+    display: flex;
+    justify-content: center;
+}
+
+div.container{
+    width: 960px;
+}
+
+/*
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);*/

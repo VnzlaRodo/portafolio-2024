@@ -1,0 +1,18 @@
+@import "../../../app.component.scss";
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.section-1{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
