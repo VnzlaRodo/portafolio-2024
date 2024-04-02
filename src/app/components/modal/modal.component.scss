@@ -1,0 +1,22 @@
+@import "../../app.component.scss";
+
+.modal_container{
+    animation: show .3s linear;
+    .modal{
+        margin-inline:20%;
+        margin-block: 10%;
+
+        h3{
+            color: black;
+        }
+    }
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

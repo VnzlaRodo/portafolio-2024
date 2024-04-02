@@ -1,0 +1,86 @@
+@import "../../../app.component.scss";
+
+.card{
+    overflow: hidden;
+    h5,p{
+        color: black;
+    }
+    img{
+        margin-top: -8px;
+    }
+    svg{
+        width: 18px !important;
+        height: 18px !important;
+    }
+    .see{
+        button{
+            svg{
+                stroke: #c5c5c5;
+                transition: all .3s;
+                width: 40px !important;
+                height: auto !important;
+            }
+            svg:hover{
+                stroke: white;
+            }
+        }
+    }
+    .see:hover{
+        opacity: .4;
+    }
+}
+
+.modal_container{
+    display: none;
+    animation: show .3s linear;
+    
+    
+}
+
+.modal_container.active{
+    display: flex;
+    .modal{
+        width: 400px;
+        height: 400px;
+       
+    }
+}
+
+.modal_container_gallery{
+    display: none;
+    animation: show .3s linear;
+}
+
+.modal_container_gallery.active{
+    display: flex;
+    .modal{
+        width: 90%;
+        height: 90%;
+        .container_img{
+            .overflow-y-scroll{
+                height: 450px;
+                scroll-behavior: smooth;
+            }
+            .overflow-y-scroll::-webkit-scrollbar {
+                width: 10px;
+            }
+            .overflow-y-scroll::-webkit-scrollbar-thumb {
+                background-color: #07184F;
+                border-radius: 5px;
+            }
+            .overflow-y-scroll::-webkit-scrollbar-track {
+                background: rgb(241, 241, 241,.5);
+              }
+        }       
+    }
+}
+
+
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

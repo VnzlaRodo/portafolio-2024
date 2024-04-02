@@ -22,7 +22,7 @@ h1{
   font-family: "cyber";
 }
 
-p{
+p,span{
   font-family: "poppins";
 }
 
@@ -32,7 +32,7 @@ section.container{
 }
 
 div.container{
-    width: 960px;
+    width: 720px;
 }
 
 /*
@@ -43,3 +43,27 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1320px
 );*/
+
+.laravel{
+  background-color: #ED4F45;
+  color: white;
+}
+
+.boostrap{
+  background-color: #6366F1;
+  color: white;
+}
+
+.javascript{
+  background-color: #E7A52E;
+  color: white;
+}
+
+.angular{
+  background-color: #DE0837;
+  color: white;
+}
+.animatecss{
+  background-color: black;
+  color: white;
+}
