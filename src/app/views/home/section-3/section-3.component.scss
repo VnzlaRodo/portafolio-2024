@@ -2,6 +2,7 @@
 
 .card{
     overflow: hidden;
+    height: 270px;
     h5,p{
         color: black;
     }
@@ -27,6 +28,17 @@
     }
     .see:hover{
         opacity: .4;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .card{
+        height: 250px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .card{
+        height: auto;
     }
 }
 
@@ -82,5 +94,29 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .modal_container_gallery.active{
+        .modal{
+            .container_img{
+                .overflow-y-scroll{
+                    height: 800px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .modal_container_gallery.active{
+        .modal{
+            .container_img{
+                .overflow-y-scroll{
+                    height: 750px;
+                }
+            }
+        }
     }
 }

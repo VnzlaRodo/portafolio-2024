@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './views/home/home.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { ObservableService } from './observable.service';
 
 @Component({
@@ -15,7 +15,7 @@ import { ObservableService } from './observable.service';
     RouterOutlet,
     NavbarComponent,
     SidebarComponent,
-    ModalComponent,
+    FooterComponent,
     HomeComponent
   ],
   templateUrl: './app.component.html',

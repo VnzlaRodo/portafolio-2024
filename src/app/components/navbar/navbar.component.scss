@@ -6,13 +6,18 @@ nav{
     position: sticky;
     top: 0;
     z-index: 3;
-    box-shadow: 0px 0px 15px -5px white;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    margin-inline: 15%;
     .brand{
         flex: 2;
-        padding-left: 30px;
+        
         a{
             display: inline-block;
             transition: .3s all;
+            padding-left: 30px;
+            padding-right: 15px;
+            height: 100%;
             
         }
         a:hover{
@@ -36,6 +41,9 @@ nav{
             display: flex;
             justify-content: center;
             height: 100% !important;
+            .active{
+                color: red;
+            }
         }
         a{
             color: white;
@@ -55,14 +63,79 @@ nav{
             box-shadow: 0px 0px 8px 5px rgb(0, 0, 0,.5);
         }
     }
-    .toggle{
-        flex: 1;
-        display: none;
-    }
+   
 }
 
 nav.sticky{
-    transition: all .3s;
+    transition: ease-in-out .3s;
     background-color: #05259469;
+    backdrop-filter: blur(5px);
     box-shadow: none;
+    margin-inline: 25%;
+    border-radius: 0px 0px 50px 50px;    
+    .brand{
+        .logo{
+            height: 40px;
+        }
+    }
+    .links{
+        a{
+            font-size: .6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav{
+        .links{
+            a{
+                padding-inline: 15px;
+                font-size: .7rem;
+            }
+        }
+    }
+    nav.sticky{
+        .brand{
+            .logo{
+                height: 35px;
+            }
+        }
+        .links{
+            a{
+                font-size: .5rem;
+                padding-inline: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    nav{
+        margin-inline: 10%;
+        .brand{
+            .logo{
+                height: 30px;
+            }
+        }
+        .links{
+            a{
+                padding-inline: 5px;
+                font-size: .6rem;
+            }
+        }
+    }
+    nav.sticky{
+        margin-inline: 10%;
+        .brand{
+            .logo{
+                height: 30px;
+            }
+        }
+        .links{
+            a{
+                font-size: .5rem;
+                padding-inline: 5px;
+            }
+        }
+    }
 }

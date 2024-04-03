@@ -1,18 +1,20 @@
 @import "../../../app.component.scss";
 
-h1{
-    font-size: 2rem;
-    text-align: center;
+
+p{
+    font-family: "poppins";
 }
 
-.section-1{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+@media screen and (max-width: 992px) {
+    .section_1{
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .section_1{
+        height: 50vh;
+        display: block;
+        padding-top: 20%;
     }
 }

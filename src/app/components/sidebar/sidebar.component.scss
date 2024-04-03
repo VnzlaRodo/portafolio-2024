@@ -10,7 +10,7 @@
     background-color: $primary;
     opacity: .5;
     z-index: 2;
-    display: flex;
+    display: none;
     align-items: center;
     .slide{
         overflow: hidden;
@@ -84,4 +84,11 @@
         top: 100%;
         opacity: 0;
     }
+}
+
+@media screen and (min-width: 992px) {
+    .sidebar{
+        display: flex;
+    }
+    
 }
