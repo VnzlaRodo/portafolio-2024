@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit{
         var navbar = document.querySelector("nav");
         navbar?.classList.toggle("sticky", window.scrollY > 100);
       })
-      console.log(window.location.href);
+      
     }
   }
 }

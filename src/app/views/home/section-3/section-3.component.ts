@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { InfoService } from '../../../info.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { ObservableService } from '../../../observable.service';
-import { NgClass } from '@angular/common';
+import { NgClass, isPlatformBrowser } from '@angular/common';
 import { Project } from '../../../models/project';
 
 @Component({
@@ -60,7 +60,7 @@ export class Section3Component implements OnInit{
   };
   imagesGallery: [] = [];
   
-  constructor(private projects : InfoService, private sanitizer: DomSanitizer, private modalSS: ObservableService){
+  constructor(private projects : InfoService, private sanitizer: DomSanitizer, private modalSS: ObservableService, @Inject(PLATFORM_ID) private platformId: Object){
     this.info = projects.getProjects();
 
     this.info.forEach((elements:any) => {
@@ -71,10 +71,31 @@ export class Section3Component implements OnInit{
     
   }
 
+
   ngOnInit(): void {
     this.modalSS.$modal.subscribe( (resp)=> {
           this.modalSwitch = resp;
     });
+
+    if (isPlatformBrowser(this.platformId)) {
+    
+      window.addEventListener("scroll", ()=>{
+        var card = document.querySelectorAll(".card");
+     
+        card.forEach((element,i) => {
+          
+          let posicion = element.getBoundingClientRect().top;
+          let tamanoPantalla = window.innerHeight;
+          
+          element.classList.toggle("animate-jump-in", posicion < tamanoPantalla );
+          element.classList.toggle("opacity-100", posicion < tamanoPantalla );
+          
+        });
+
+        
+
+      })
+    }   
   }
 
   modalOpen(item:any){

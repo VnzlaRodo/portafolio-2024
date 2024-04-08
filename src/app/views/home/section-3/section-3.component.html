@@ -6,7 +6,7 @@
     
     @for (item of info; track $index) {
 
-        <div class="card flex flex-col items-start w-full my-10 bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <div class="card flex flex-col items-start w-full my-10 bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 opacity-0">
             <div class="relative w-full rounded-t-lg h-full md:w-1/2 md:rounded-none md:rounded-s-lg">
                 <img class=" " src="{{ item.images.avatar }}" alt="">
                 <div class="see absolute top-0 opacity-0 w-full h-full bg-black transition-all flex items-center justify-center">
@@ -17,7 +17,7 @@
             </div>
             <div class="flex flex-col md:w-1/2 h-full justify-between p-4 leading-normal">
                 <div>
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ item.title }}</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ item.title }}</h5>
                     <div class="flex gap-2 flex-wrap">
                         @for (tag of item.tags; track $index) {
                             <span class="flex rounded-3xl py-1 px-3 text-xs font-medium cursor-default  {{tag.class}}">                         
@@ -26,7 +26,7 @@
                             </span>
                         }
                     </div>
-                    <p class="mb-3 mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">{{ item.description }}</p>
+                    <p class="mb-3 mt-2 font-normal text-xs text-gray-700"[innerHTML]="transformIco(item.description)"></p>
                 </div>
                 <div class="flex justify-end gap-4">
                     @if (item.github != "") {
@@ -53,12 +53,12 @@
 
 <!--modal project (desktop or mobile)-->
 <div [ngClass]="{'active': modalSwitch == true}" class="modal_container fixed top-0 left-0 right-0 bottom-0 bg-white/50 justify-center items-center z-20">
-    <div class="modal bg-[#07184F]/80 backdrop-blur-sm rounded-lg shadow dark:bg-gray-700">
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+    <div class="modal bg-[#07184F]/80 backdrop-blur-sm rounded-lg shadow">
+        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
             <h3 class="text-lg font-semibold text-black">
                 {{ itemModal.title }}
             </h3>
-            <button (click)="closeModal()" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+            <button (click)="closeModal()" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center" >
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                 </svg>
@@ -67,17 +67,17 @@
         </div>
         <!-- body -->
         <div class="p-4 md:p-5">
-            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">{{ itemModal.description }}</p>
+            <p class="text-sm font-normal text-gray-500 ">La razón de que algún proyecto no tenga el enlace de referencia se debe a que actualmente no está en producción. Puede ver los screenshot de los mismos.</p>
             <ul class="my-4 space-y-3">
                 <li class="grid">
-                    <button (click)="modalOpenGallery(itemModal.images.desktop); closeModal()" type="button" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                    <button (click)="modalOpenGallery(itemModal.images.desktop); closeModal()" type="button" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow ">
                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-desktop"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" /><path d="M7 20h10" /><path d="M9 16v4" /><path d="M15 16v4" /></svg>
                         <span class="flex ms-3 whitespace-nowrap">Desktop</span>
                         
                     </button>
                 </li>
                 <li class="grid">
-                    <button (click)="modalOpenGallery(itemModal.images.mobile); closeModal()" type="button" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                    <button (click)="modalOpenGallery(itemModal.images.mobile); closeModal()" type="button" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow ">
                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-device-mobile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z" /><path d="M11 4h2" /><path d="M12 17v.01" /></svg>
                         <span class="flex ms-3 whitespace-nowrap">Mobile</span>
                     </button>
@@ -91,12 +91,12 @@
 
 <!--modal gallery-->
 <div [ngClass]="{'active': modalSwitchGallery == true}" class="modal_container_gallery fixed top-0 left-0 right-0 bottom-0 bg-white/50 justify-center items-center z-20">
-    <div class="modal bg-[#07184F]/80 backdrop-blur-sm rounded-lg shadow dark:bg-gray-700">
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+    <div class="modal bg-[#07184F]/80 backdrop-blur-sm rounded-lg shadow">
+        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
             <h3 class="text-lg font-semibold text-black">
                 {{ itemModal.title }}
             </h3>
-            <button (click)="closeModalGallery()" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+            <button (click)="closeModalGallery()" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center" >
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                 </svg>

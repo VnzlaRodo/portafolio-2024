@@ -43,7 +43,7 @@ div.container{
 
 @media screen and (max-width: 640px) {
   div.container{
-    width: 95%;
+    width: 85%;
   }
 }
 
@@ -77,5 +77,14 @@ $container-max-widths: (
 }
 .animatecss{
   background-color: black;
+  color: white;
+}
+.sass{
+  background-color: #CF649A;
+  color: white;
+}
+
+.wordpress{
+  background-color: #08789F;
   color: white;
 }
