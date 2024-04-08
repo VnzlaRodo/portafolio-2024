@@ -120,3 +120,21 @@
         }
     }
 }
+
+@keyframes jump-in {
+    0% {
+        opacity: 0;
+        transform: scale(0%);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(120%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+.animate-jump-in {
+    animation: jump-in .5s both;
+}

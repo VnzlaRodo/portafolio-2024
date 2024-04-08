@@ -18,3 +18,18 @@ p{
         padding-top: 20%;
     }
 }
+
+@keyframes jump {
+    0%, 100% {
+        transform: scale(100%);
+    }
+    10% {
+        transform: scale(80%);
+    }
+    50% {
+        transform: scale(120%);
+    }
+}
+.animate-jump {
+    animation: jump .5s both;
+}

@@ -3,3 +3,19 @@
 span{
     color: #3b82f6;
 }
+
+@keyframes flip-down {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+        transform-origin: top;
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+        transform-origin: top;
+    }
+}
+.animate-flip-down {
+    animation: flip-down 1s both;
+}

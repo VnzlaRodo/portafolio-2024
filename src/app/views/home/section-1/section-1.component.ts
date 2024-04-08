@@ -20,7 +20,10 @@ export class Section1Component implements OnInit{
         let posicion = header?.getBoundingClientRect().top;
         let tamanoPantalla = window.innerHeight;
 
-        if (posicion) header?.classList.toggle("animate-jump", window.scrollY < tamanoPantalla );
+        //if (posicion) header?.classList.toggle("animate-jump", posicion < tamanoPantalla );
+
+        if (window.scrollY == 0) header?.classList.add("animate-jump");
+        if (window.scrollY != 0) header?.classList.remove("animate-jump");
       })
     }   
   } 

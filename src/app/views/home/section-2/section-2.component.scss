@@ -1,0 +1,25 @@
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-2rem/* -32px */);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-down {
+    animation: fade-down 1s both;
+}
+
+.animate-fill-both {
+    animation-fill-mode: both;
+}
+
+.animate-delay-\[600ms\] {
+    animation-delay: 600ms;
+}
+
+.animate-once {
+    animation-iteration-count: 1;
+}
